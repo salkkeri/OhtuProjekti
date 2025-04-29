@@ -1,4 +1,4 @@
-package com.example.ohtuprojekti;
+package com.OhtuProjekti;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
