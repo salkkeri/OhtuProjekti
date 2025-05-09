@@ -1,5 +1,7 @@
 package com.OhtuProjekti;
 
+import javafx.scene.paint.Color;
+
 /**
  * Various constants and functions used globally
  */
@@ -18,5 +20,7 @@ public class Utils {
      * Window height
      */
     public static final double SCREEN_HEIGHT = 800;
+
+    public static final Color TITLE_TEXT_COLOR = Color.DEEPPINK;
 
 }

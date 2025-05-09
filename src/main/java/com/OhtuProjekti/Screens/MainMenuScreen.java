@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 import static com.OhtuProjekti.Utils.BACKGROUNDCOLOR;
+import static com.OhtuProjekti.Utils.TITLE_TEXT_COLOR;
 
 
 /**
@@ -60,7 +61,7 @@ public class MainMenuScreen implements ScreenInterface {
         Text menuText = new Text("Menu");
         menuText.setScaleX(3);
         menuText.setScaleY(3);
-        menuText.setStroke(Color.DEEPPINK);
+        menuText.setStroke(TITLE_TEXT_COLOR);
         menuBox.getChildren().add(menuText);
         menuText.setTranslateY(-100);
 
