@@ -1,6 +1,7 @@
 package com.OhtuProjekti.Screens;
 
 import com.OhtuProjekti.DBManager;
+import com.OhtuProjekti.Mokki;
 import com.OhtuProjekti.SceneManager;
 import com.OhtuProjekti.Utils;
 import javafx.geometry.Pos;
@@ -100,7 +101,8 @@ public class MokkiScreen implements ScreenInterface {
                 double hinta = Double.parseDouble(priceField.getText());
                 int kapasiteetti = Integer.parseInt(capacityField.getText());
 
-                DBManager.insertMokki(id, nimi, osoite, varustelu, hinta, kapasiteetti);
+                Mokki mokki = new Mokki(id, nimi, osoite, varustelu, hinta, kapasiteetti);
+                DBManager.insertMokki(mokki);
                 //showAlert(Alert.AlertType.INFORMATION, "Success", "Mökki inserted successfully!");
             } catch (Exception ex) {
                 //showAlert(Alert.AlertType.ERROR, "Error", "Failed to insert Mökki: " + ex.getMessage());
