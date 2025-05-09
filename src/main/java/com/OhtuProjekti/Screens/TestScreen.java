@@ -3,7 +3,6 @@ package com.OhtuProjekti.Screens;
 import com.OhtuProjekti.DBManager;
 import com.OhtuProjekti.SceneManager;
 import com.OhtuProjekti.Utils;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -15,9 +14,9 @@ import static com.OhtuProjekti.Utils.BACKGROUNDCOLOR;
 
 
 /**
- * Class for handling mokkis
+ * Class for testing
  */
-public class MokkiScreen implements ScreenInterface {
+public class TestScreen implements ScreenInterface {
 
 
     /**
@@ -34,7 +33,7 @@ public class MokkiScreen implements ScreenInterface {
     /** Constructor, sets GameScreen.sceneManager
      * @param sceneManager The common project SceneManager
      */
-    public MokkiScreen(SceneManager sceneManager) {
+    public TestScreen(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
 

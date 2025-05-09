@@ -10,15 +10,6 @@ public class SQL {
 
         String[] statements = {
 
-                "CREATE TABLE Tyontekija (" +
-                        "TyontekijaID INTEGER PRIMARY KEY," +
-                        "Nimi TEXT," +
-                        "Sähköposti TEXT," +
-                        "Puh_nro TEXT," +
-                        "Titteli TEXT" +
-                        ");",
-
-
                 "CREATE TABLE Asiakas (" +
                         "AsiakasID INTEGER PRIMARY KEY," +
                         "Nimi TEXT," +
@@ -32,8 +23,8 @@ public class SQL {
                         "Nimi TEXT," +
                         "Osoite TEXT," +
                         "Varustelu TEXT," +
-                        "Kapasiteetti INTEGER," +
                         "HintaPerYo REAL" +
+                        "Kapasiteetti INTEGER," +
                         ");",
 
                 "CREATE TABLE Varaus (" +
