@@ -74,12 +74,17 @@ public class MainMenuScreen implements ScreenInterface {
             //sceneManager.showVarausScreen();
         });
 
+        Button testButton = new Button("Testi");
+        testButton.setOnAction(e -> {
+            sceneManager.showTestScreen();
+        });
+
         Button exitButton = new Button("Exit");
         exitButton.setOnAction(e -> {
             System.exit(0);
         });
 
-        menuBox.getChildren().addAll(mokkiButton, varauksetButton, exitButton);
+        menuBox.getChildren().addAll(mokkiButton, varauksetButton, testButton, exitButton);
         layout.getChildren().add(menuBox);
         screen = layout;
 
