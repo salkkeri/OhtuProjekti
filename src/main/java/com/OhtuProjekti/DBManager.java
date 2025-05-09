@@ -90,9 +90,9 @@ public class DBManager {
 
 
             pstmt.executeUpdate();
-            System.out.println("Asiakas inserted successfully.");
+            System.out.println("Varaus inserted successfully.");
         } catch (SQLException e) {
-            System.out.println("Error inserting Asiakas: " + e.getMessage());
+            System.out.println("Error inserting Varaus: " + e.getMessage());
         }
     }
 
@@ -109,9 +109,9 @@ public class DBManager {
             pstmt.setInt(5, Maksettu);
 
             pstmt.executeUpdate();
-            System.out.println("Asiakas inserted successfully.");
+            System.out.println("Lasku inserted successfully.");
         } catch (SQLException e) {
-            System.out.println("Error inserting Asiakas: " + e.getMessage());
+            System.out.println("Error inserting Lasku: " + e.getMessage());
         }
     }
 
