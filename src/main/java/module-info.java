@@ -3,5 +3,8 @@ module com.example.ohtuprojekti {
     requires javafx.fxml;
     requires java.sql;
 
+    exports com.OhtuProjekti;
+
+
 
 }
