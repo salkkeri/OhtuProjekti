@@ -41,8 +41,8 @@ public class DBManager {
         }
     }
 
-    public static void insertMokki(int mokkiID, String nimi, String osoite, String varustelu, double hintaPerYö, int kapasiteetti) {
-        String sql = "INSERT INTO Mökki (MokkiID, Nimi, Osoite, Varustelu, \"Hinta per yö\", Kapasiteetti) VALUES (?, ?, ?, ?, ?, ?)";
+    public static void insertMokki(int mokkiID, String nimi, String osoite, String varustelu, double hintaPerYo, int kapasiteetti) {
+        String sql = "INSERT INTO Mokki (MokkiID, Nimi, Osoite, Varustelu, HintaPerYo, Kapasiteetti) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(DB_URL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -51,7 +51,7 @@ public class DBManager {
             pstmt.setString(2, nimi);
             pstmt.setString(3, osoite);
             pstmt.setString(4, varustelu);
-            pstmt.setDouble(5, hintaPerYö);
+            pstmt.setDouble(5, hintaPerYo);
             pstmt.setInt(6, kapasiteetti);
 
             pstmt.executeUpdate();
