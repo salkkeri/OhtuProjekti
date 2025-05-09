@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 import static com.OhtuProjekti.Utils.*;
 
@@ -56,6 +58,14 @@ public class MokkiScreen implements ScreenInterface {
 
         StackPane layout = new StackPane();
         layout.setStyle(BACKGROUNDCOLOR);
+
+        Text menuText = new Text("Mökit");
+        menuText.setScaleX(3);
+        menuText.setScaleY(3);
+        menuText.setStroke(TITLE_TEXT_COLOR);
+        layout.getChildren().add(menuText);
+        menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
+
 
 
 

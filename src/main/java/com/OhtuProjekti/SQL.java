@@ -14,8 +14,8 @@ public class SQL {
                         "AsiakasID INTEGER PRIMARY KEY," +
                         "Nimi TEXT," +
                         "Osoite TEXT," +
-                        "Sähköposti TEXT," +
                         "Puh_nro TEXT" +
+                        "Sähköposti TEXT," +
                         ");",
 
                 "CREATE TABLE Mokki (" +
