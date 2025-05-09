@@ -26,11 +26,11 @@ public class MainApp extends Application {
         stage.setMaxWidth(Utils.SCREEN_WIDTH);
         stage.setMinHeight(Utils.SCREEN_HEIGHT);
         stage.setMinWidth(Utils.SCREEN_WIDTH);
-        //SceneManager sceneManager = new SceneManager(stage);
+        SceneManager sceneManager = new SceneManager(stage);
 
-        //sceneManager.showMainMenu();
+        sceneManager.showMainMenu();
 
-        //stage.setTitle("");
+        stage.setTitle("Mökkikodit varausjärjestelmä");
         stage.show();
 
 

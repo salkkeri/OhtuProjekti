@@ -57,7 +57,7 @@ public class MainMenuScreen implements ScreenInterface {
         menuBox.setAlignment(Pos.CENTER);
         menuBox.setSpacing(10);
 
-        Text menuText = new Text("NEON PANIC");
+        Text menuText = new Text("Menu");
         menuText.setScaleX(3);
         menuText.setScaleY(3);
         menuText.setStroke(Color.DEEPPINK);

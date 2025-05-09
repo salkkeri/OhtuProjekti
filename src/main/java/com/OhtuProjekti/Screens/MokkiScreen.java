@@ -3,6 +3,7 @@ package com.OhtuProjekti.Screens;
 import com.OhtuProjekti.SceneManager;
 import com.OhtuProjekti.Utils;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
@@ -45,25 +46,29 @@ public class MokkiScreen implements ScreenInterface {
 
 
     /**
-     * Creates the StackPane for drawing the game
+     * Creates the StackPane for drawing the screen
      */
     public void createScreen(){
 
         StackPane layout = new StackPane();
         layout.setStyle(BACKGROUNDCOLOR);
 
+
+
         
         layout.setMinSize(Utils.SCREEN_WIDTH, Utils.SCREEN_HEIGHT);
         screen = layout;
 
+        Button backButton = new Button();
+        backButton.setText("Menu");
+        backButton.setOnAction(
+                e -> {
+                    sceneManager.showMainMenu();
+                });
+        layout.getChildren().add(backButton);
+
     }
 
-    /** Starts the GameEngine
-     * @param scene Scene object, where the game is drawn
-     */
-    public void startGame(Scene scene){
-
-    }
 
 
 

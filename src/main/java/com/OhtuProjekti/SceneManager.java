@@ -54,11 +54,10 @@ public class SceneManager {
      * Shows mökki screen
      */
     public void showMokkiScreen() {
-        MokkiScreen gameScreen = new MokkiScreen(this);
-        gameScreen.createScreen();
-        setScene(gameScreen.getScreen());
-        gameScreen.startGame(getScene());
-        stage.setTitle("Game");
+        MokkiScreen mokkiScreen = new MokkiScreen(this);
+        mokkiScreen.createScreen();
+        setScene(mokkiScreen.getScreen());
+
     }
 
 }
