@@ -61,4 +61,22 @@ public class DBManager {
         }
     }
 
+    public static void insertAsiakas(int asiakasID, String nimi, String osoite, String puhNum, String sPosti) {
+        String sql = "INSERT INTO Asiakas (Asiakas_ID, Nimi, Osoite, Puh_nro, Sähköposti) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection(DB_URL);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, asiakasID);
+            pstmt.setString(2, nimi);
+            pstmt.setString(3, osoite);
+            pstmt.setString(4, puhNum);
+            pstmt.setString(5, sPosti);
+
+            pstmt.executeUpdate();
+            System.out.println("Asiakas inserted successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error inserting Asiakas: " + e.getMessage());
+        }
+    }
+
 }
