@@ -73,8 +73,6 @@ public class MokkiScreen implements ScreenInterface {
 
         // Layout
         GridPane grid = new GridPane();
-        grid.setVgap(10);
-        grid.setHgap(10);
 
         grid.add(new Label("Mökki ID:"), 0, 0);
         grid.add(idField, 1, 0);
