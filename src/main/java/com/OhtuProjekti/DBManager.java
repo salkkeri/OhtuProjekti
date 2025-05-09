@@ -40,4 +40,25 @@ public class DBManager {
             return stmt.executeUpdate(sql);
         }
     }
+
+    public static void insertMokki(int mokkiID, String nimi, String osoite, String varustelu, double hintaPerYö, int kapasiteetti) {
+        String sql = "INSERT INTO Mökki (MokkiID, Nimi, Osoite, Varustelu, \"Hinta per yö\", Kapasiteetti) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = DriverManager.getConnection(DB_URL);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, mokkiID);
+            pstmt.setString(2, nimi);
+            pstmt.setString(3, osoite);
+            pstmt.setString(4, varustelu);
+            pstmt.setDouble(5, hintaPerYö);
+            pstmt.setInt(6, kapasiteetti);
+
+            pstmt.executeUpdate();
+            System.out.println("Mökki inserted successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error inserting Mökki: " + e.getMessage());
+        }
+    }
+
 }
