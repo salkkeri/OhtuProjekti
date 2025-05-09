@@ -5,7 +5,6 @@ import javafx.stage.Stage;
 
 /**
  * Startpoint of the application.
- * @author Antti Puuronen
  */
 public class MainApp extends Application {
 

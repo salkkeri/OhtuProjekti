@@ -2,7 +2,6 @@ package com.OhtuProjekti;
 
 /**
  * Various constants and functions used globally
- * @author Antti
  */
 public class Utils {
 
