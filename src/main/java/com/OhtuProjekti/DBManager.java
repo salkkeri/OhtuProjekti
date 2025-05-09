@@ -41,6 +41,24 @@ public class DBManager {
         }
     }
 
+    public static void insertAsiakas(int AsiakasID, String Nimi, String Osoite, String Puh_nro, String Sähköposti) {
+        String sql = "INSERT INTO Asiakas (AsiakasID, Nimi, Osoite, Puhnro, Sähköposti) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection(DB_URL);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, AsiakasID);
+            pstmt.setString(2, Nimi);
+            pstmt.setString(3, Osoite);
+            pstmt.setString(4, Puh_nro);
+            pstmt.setString(5, Sähköposti);
+
+            pstmt.executeUpdate();
+            System.out.println("Asiakas inserted successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error inserting Asiakas: " + e.getMessage());
+        }
+    }
+
     public static void insertMokki(int mokkiID, String nimi, String osoite, String varustelu, double hintaPerYo, int kapasiteetti) {
         String sql = "INSERT INTO Mokki (MokkiID, Nimi, Osoite, Varustelu, HintaPerYo, Kapasiteetti) VALUES (?, ?, ?, ?, ?, ?)";
 
@@ -61,21 +79,39 @@ public class DBManager {
         }
     }
 
-    public static void insertAsiakas(int asiakasID, String nimi, String osoite, String puhNum, String sPosti) {
-        String sql = "INSERT INTO Asiakas (Asiakas_ID, Nimi, Osoite, Puh_nro, Sähköposti) VALUES (?, ?, ?, ?, ?, ?)";
+    public static void insertVaraus(int VarausID, int AsiakasID, int MokkiID) {
+        String sql = "INSERT INTO Varaus (VarausID, AsiakasID, MokkiID) VALUES (?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(DB_URL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, asiakasID);
-            pstmt.setString(2, nimi);
-            pstmt.setString(3, osoite);
-            pstmt.setString(4, puhNum);
-            pstmt.setString(5, sPosti);
+            pstmt.setInt(1, VarausID);
+            pstmt.setInt(2, AsiakasID);
+            pstmt.setInt(3, MokkiID);
+
 
             pstmt.executeUpdate();
-            System.out.println("Asiakas inserted successfully.");
+            System.out.println("Varaus inserted successfully.");
         } catch (SQLException e) {
-            System.out.println("Error inserting Asiakas: " + e.getMessage());
+            System.out.println("Error inserting Varaus: " + e.getMessage());
+        }
+    }
+
+
+    public static void insertLasku(int LaskuID, double Summa, String Erapaiva, int VarausID, int Maksettu) {
+        String sql = "INSERT INTO Lasku (LaskuID, Summa, Erapaiva, VarausID, Maksettu) VALUES (?, ?, ?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection(DB_URL);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, LaskuID);
+            pstmt.setDouble(2, Summa);
+            pstmt.setString(3, Erapaiva);
+            pstmt.setInt(4, VarausID);
+            pstmt.setInt(5, Maksettu);
+
+            pstmt.executeUpdate();
+            System.out.println("Lasku inserted successfully.");
+        } catch (SQLException e) {
+            System.out.println("Error inserting Lasku: " + e.getMessage());
         }
     }
 
