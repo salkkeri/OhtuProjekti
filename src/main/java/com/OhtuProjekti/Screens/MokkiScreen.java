@@ -3,6 +3,7 @@ package com.OhtuProjekti.Screens;
 import com.OhtuProjekti.DBManager;
 import com.OhtuProjekti.SceneManager;
 import com.OhtuProjekti.Utils;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-import static com.OhtuProjekti.Utils.BACKGROUNDCOLOR;
+import static com.OhtuProjekti.Utils.*;
 
 
 /**
@@ -116,6 +117,8 @@ public class MokkiScreen implements ScreenInterface {
                 e -> {
                     sceneManager.showMainMenu();
                 });
+        backButton.setTranslateX(-SCREEN_WIDTH/2+50);
+        backButton.setTranslateY(SCREEN_HEIGHT/2-50);
         layout.getChildren().add(backButton);
 
     }
