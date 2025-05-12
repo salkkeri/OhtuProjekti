@@ -4,6 +4,11 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 /**
+ * sssssssuuuun mutsiiis <333
+ */
+
+
+/**
  * Startpoint of the application.
  */
 public class MainApp extends Application {
