@@ -44,50 +44,6 @@ public class MokkiScreen extends SuperScreen {
         super.createScreenSuper("Mökit");
 
 
-        TextField idField = new TextField();
-        TextField nameField = new TextField();
-        TextField addressField = new TextField();
-        TextField equipmentField = new TextField();
-        TextField priceField = new TextField();
-        TextField capacityField = new TextField();
-        Button insertButton = new Button("Insert Mökki");
-
-        // Layout
-        GridPane grid = new GridPane();
-
-        grid.add(new Label("Mökki ID:"), 0, 0);
-        grid.add(idField, 1, 0);
-        grid.add(new Label("Nimi:"), 0, 1);
-        grid.add(nameField, 1, 1);
-        grid.add(new Label("Osoite:"), 0, 2);
-        grid.add(addressField, 1, 2);
-        grid.add(new Label("Varustelu:"), 0, 3);
-        grid.add(equipmentField, 1, 3);
-        grid.add(new Label("Hinta per yö:"), 0, 4);
-        grid.add(priceField, 1, 4);
-        grid.add(new Label("Kapasiteetti:"), 0, 5);
-        grid.add(capacityField, 1, 5);
-        grid.add(insertButton, 1, 6);
-
-        // Button action
-        insertButton.setOnAction(e -> {
-            try {
-                int id = Integer.parseInt(idField.getText());
-                String nimi = nameField.getText();
-                String osoite = addressField.getText();
-                String varustelu = equipmentField.getText();
-                double hinta = Double.parseDouble(priceField.getText());
-                int kapasiteetti = Integer.parseInt(capacityField.getText());
-
-                Mokki mokki = new Mokki(id, nimi, osoite, varustelu, hinta, kapasiteetti);
-                DBManager.insertMokki(mokki);
-                //showAlert(Alert.AlertType.INFORMATION, "Success", "Mökki inserted successfully!");
-            } catch (Exception ex) {
-                //showAlert(Alert.AlertType.ERROR, "Error", "Failed to insert Mökki: " + ex.getMessage());
-            }
-        });
-
-        screen.getChildren().add(grid);
 
 
 
