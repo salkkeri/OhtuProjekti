@@ -2,6 +2,7 @@ package com.OhtuProjekti.Screens;
 
 import com.OhtuProjekti.DBManager;
 import com.OhtuProjekti.Classes.Mokki;
+import com.OhtuProjekti.Popups.InsertMokkiPopup;
 import com.OhtuProjekti.SceneManager;
 import com.OhtuProjekti.Utils;
 import javafx.scene.control.Button;
@@ -86,6 +87,13 @@ public class TestScreen extends SuperScreen {
 
         screen.setCenter(grid);
 
+
+        Button insertMokkiButton = new Button("Insert mokki");
+        insertMokkiButton.setOnAction(e -> {
+            InsertMokkiPopup insertMokkiPopup = new InsertMokkiPopup();
+            insertMokkiPopup.showPopup();
+        });
+        screen.setBottom(insertMokkiButton);
 
     }
 
