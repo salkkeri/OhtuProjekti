@@ -15,17 +15,7 @@ import static com.OhtuProjekti.Utils.*;
 /**
  * Class for handling main menu
  */
-public class MainMenuScreen implements ScreenInterface {
-
-    /**
-     * Pane for drawing main menu
-     */
-    Pane screen;
-
-    /**
-     * Should be the project common SceneManager
-     */
-    SceneManager sceneManager;
+public class MainMenuScreen extends SuperScreen {
 
     /** Returns the Pane screen where the main menu is drawn
      * @return MainMenuScreen.screen
@@ -44,9 +34,8 @@ public class MainMenuScreen implements ScreenInterface {
 
 
     /**
-     * Initializes the game and creates the Pane layout for drawing the main menu
+     * Initializes the app and creates the Pane layout for drawing the main menu
      */
-    @Override
     public void createScreen(){
         StackPane layout = new StackPane();
         layout.setStyle(BACKGROUNDCOLOR);

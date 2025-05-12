@@ -18,21 +18,9 @@ import static com.OhtuProjekti.Utils.*;
 /**
  * Class for handling mokkis
  */
-public class MokkiScreen implements ScreenInterface {
+public class MokkiScreen extends SuperScreen {
 
-
-    /**
-     * SceneManager, should be the common project SceneManager
-     */
-    private SceneManager sceneManager;
-
-
-    /**
-     * Screen for drawing the game
-     */
-    public Pane screen;
-
-    /** Constructor, sets GameScreen.sceneManager
+    /** Constructor, sets MokkiScreen.sceneManager
      * @param sceneManager The common project SceneManager
      */
     public MokkiScreen(SceneManager sceneManager) {
@@ -53,23 +41,8 @@ public class MokkiScreen implements ScreenInterface {
      * Creates the StackPane for drawing the screen
      */
     public void createScreen(){
+        super.createScreenSuper("Mökit");
 
-        StackPane layout = new StackPane();
-        layout.setStyle(BACKGROUNDCOLOR);
-
-        Text menuText = new Text("Mökit");
-        menuText.setScaleX(3);
-        menuText.setScaleY(3);
-        menuText.setStroke(TITLE_TEXT_COLOR);
-        layout.getChildren().add(menuText);
-        menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
-
-
-
-
-        
-        layout.setMinSize(Utils.SCREEN_WIDTH, Utils.SCREEN_HEIGHT);
-        screen = layout;
 
         TextField idField = new TextField();
         TextField nameField = new TextField();
@@ -114,19 +87,9 @@ public class MokkiScreen implements ScreenInterface {
             }
         });
 
-        layout.getChildren().add(grid);
+        screen.getChildren().add(grid);
 
 
-
-        Button backButton = new Button();
-        backButton.setText("Menu");
-        backButton.setOnAction(
-                e -> {
-                    sceneManager.showMainMenu();
-                });
-        backButton.setTranslateX(-SCREEN_WIDTH/2+50);
-        backButton.setTranslateY(SCREEN_HEIGHT/2-50);
-        layout.getChildren().add(backButton);
 
     }
 

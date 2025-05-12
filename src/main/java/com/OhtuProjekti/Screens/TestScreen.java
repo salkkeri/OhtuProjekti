@@ -17,23 +17,9 @@ import static com.OhtuProjekti.Utils.BACKGROUNDCOLOR;
 /**
  * Class for testing
  */
-public class TestScreen implements ScreenInterface {
+public class TestScreen extends SuperScreen {
 
 
-    /**
-     * SceneManager, should be the common project SceneManager
-     */
-    private SceneManager sceneManager;
-
-
-    /**
-     * Screen for drawing the game
-     */
-    public Pane screen;
-
-    /** Constructor, sets GameScreen.sceneManager
-     * @param sceneManager The common project SceneManager
-     */
     public TestScreen(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
@@ -52,15 +38,8 @@ public class TestScreen implements ScreenInterface {
      * Creates the StackPane for drawing the screen
      */
     public void createScreen(){
+        super.createScreenSuper("Mökit");
 
-        StackPane layout = new StackPane();
-        layout.setStyle(BACKGROUNDCOLOR);
-
-
-
-        
-        layout.setMinSize(Utils.SCREEN_WIDTH, Utils.SCREEN_HEIGHT);
-        screen = layout;
 
         TextField idField = new TextField();
         TextField nameField = new TextField();
@@ -72,8 +51,6 @@ public class TestScreen implements ScreenInterface {
 
         // Layout
         GridPane grid = new GridPane();
-        grid.setVgap(10);
-        grid.setHgap(10);
 
         grid.add(new Label("Mökki ID:"), 0, 0);
         grid.add(idField, 1, 0);
@@ -99,29 +76,19 @@ public class TestScreen implements ScreenInterface {
                 double hinta = Double.parseDouble(priceField.getText());
                 int kapasiteetti = Integer.parseInt(capacityField.getText());
 
-                DBManager.insertMokki(new Mokki(id, nimi, osoite, varustelu, hinta, kapasiteetti));
+                Mokki mokki = new Mokki(id, nimi, osoite, varustelu, hinta, kapasiteetti);
+                DBManager.insertMokki(mokki);
                 //showAlert(Alert.AlertType.INFORMATION, "Success", "Mökki inserted successfully!");
             } catch (Exception ex) {
                 //showAlert(Alert.AlertType.ERROR, "Error", "Failed to insert Mökki: " + ex.getMessage());
             }
         });
 
-        layout.getChildren().add(grid);
+        //screen.getChildren().add(grid);
 
 
-
-        Button backButton = new Button();
-        backButton.setText("Menu");
-        backButton.setOnAction(
-                e -> {
-                    sceneManager.showMainMenu();
-                });
-        layout.getChildren().add(backButton);
 
     }
-
-
-
 
 
 }

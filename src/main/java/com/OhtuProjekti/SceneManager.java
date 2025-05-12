@@ -60,6 +60,12 @@ public class SceneManager {
 
     }
 
+    public void showAsiakasScreen(){
+        AsiakasScreen asiakasScreen = new AsiakasScreen(this);
+        asiakasScreen.createScreen();
+        setScene(asiakasScreen.getScreen());
+    }
+
     public void showTestScreen() {
         TestScreen testScreen = new TestScreen(this);
         testScreen.createScreen();
