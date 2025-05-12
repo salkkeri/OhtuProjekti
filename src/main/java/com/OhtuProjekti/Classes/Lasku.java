@@ -1,4 +1,4 @@
-package com.OhtuProjekti;
+package com.OhtuProjekti.Classes;
 
 public class Lasku {
     public int laskuID;

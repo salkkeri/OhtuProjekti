@@ -1,5 +1,10 @@
 package com.OhtuProjekti;
 
+import com.OhtuProjekti.Classes.Asiakas;
+import com.OhtuProjekti.Classes.Lasku;
+import com.OhtuProjekti.Classes.Mokki;
+import com.OhtuProjekti.Classes.Varaus;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

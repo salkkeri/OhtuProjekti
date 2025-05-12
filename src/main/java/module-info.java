@@ -4,7 +4,7 @@ module com.example.ohtuprojekti {
     requires java.sql;
 
     exports com.OhtuProjekti;
-
+    exports com.OhtuProjekti.Classes;
 
 
 }

@@ -9,8 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-import static com.OhtuProjekti.Utils.BACKGROUNDCOLOR;
-import static com.OhtuProjekti.Utils.TITLE_TEXT_COLOR;
+import static com.OhtuProjekti.Utils.*;
 
 
 /**
@@ -62,8 +61,8 @@ public class MainMenuScreen implements ScreenInterface {
         menuText.setScaleX(3);
         menuText.setScaleY(3);
         menuText.setStroke(TITLE_TEXT_COLOR);
-        menuBox.getChildren().add(menuText);
-        menuText.setTranslateY(-100);
+        //menuBox.getChildren().add(menuText);
+        menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
 
         Button mokkiButton = new Button("Mökit");
         mokkiButton.setOnAction(e -> {
@@ -88,6 +87,7 @@ public class MainMenuScreen implements ScreenInterface {
         menuBox.getChildren().addAll(mokkiButton, varauksetButton, testButton, exitButton);
         layout.getChildren().add(menuBox);
         screen = layout;
+        layout.getChildren().add(menuText);
 
     }
 
