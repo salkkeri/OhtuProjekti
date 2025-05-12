@@ -2,7 +2,9 @@ package com.OhtuProjekti.Screens;
 
 import com.OhtuProjekti.SceneManager;
 import com.OhtuProjekti.Utils;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -21,7 +23,7 @@ abstract public class SuperScreen {
     /**
      * Screen for drawing the game
      */
-    public Pane screen;
+    public BorderPane screen;
 
 
     /** Returns the Pane where the game is drawn
@@ -37,31 +39,42 @@ abstract public class SuperScreen {
      */
     public void createScreenSuper(String titleText){
 
-        StackPane layout = new StackPane();
+        BorderPane layout = new BorderPane();
         layout.setStyle(BACKGROUNDCOLOR);
 
         layout.setMinSize(Utils.SCREEN_WIDTH, Utils.SCREEN_HEIGHT);
+        layout.setMaxSize(Utils.SCREEN_WIDTH, Utils.SCREEN_HEIGHT);
         screen = layout;
 
-        Text menuText = new Text(titleText);
-        menuText.setScaleX(3);
-        menuText.setScaleY(3);
-        menuText.setStroke(TITLE_TEXT_COLOR);
-        layout.getChildren().add(menuText);
-        menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
+        Text labelText = new Text(titleText);
+        labelText.setScaleX(3);
+        labelText.setScaleY(3);
+        labelText.setStroke(TITLE_TEXT_COLOR);
 
+        //menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
+        StackPane labelTextPane = new StackPane();
+        labelTextPane.setAlignment(Pos.CENTER);
+        labelTextPane.getChildren().add(labelText);
+
+        screen.setTop(labelTextPane);
 
 
         Button backButton = new Button();
         backButton.setText("Menu");
         backButton.setOnAction(
                 e -> {
-                    System.out.println("Back button clicked");
+                    //System.out.println("Back button clicked");
                     sceneManager.showMainMenu();
                 });
-        backButton.setTranslateX(-SCREEN_WIDTH/2+50);
-        backButton.setTranslateY(SCREEN_HEIGHT/2-50);
-        screen.getChildren().add(backButton);
+        //backButton.setTranslateX(-SCREEN_WIDTH/2+50);
+        //backButton.setTranslateY(SCREEN_HEIGHT/2-50);
+        StackPane buttonPane = new StackPane();
+        buttonPane.getChildren().add(backButton);
+        backButton.setAlignment(Pos.CENTER);
+
+        //screen.setBottom(backButton);
+        screen.setLeft(buttonPane);
+
     }
 
 

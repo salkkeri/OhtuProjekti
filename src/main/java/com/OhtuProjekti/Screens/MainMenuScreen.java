@@ -37,21 +37,12 @@ public class MainMenuScreen extends SuperScreen {
      * Initializes the app and creates the Pane layout for drawing the main menu
      */
     public void createScreen(){
-        StackPane layout = new StackPane();
-        layout.setStyle(BACKGROUNDCOLOR);
-        layout.setMinSize(Utils.SCREEN_WIDTH, Utils.SCREEN_HEIGHT);
-        layout.setAlignment(Pos.CENTER);
+        super.createScreenSuper("Menu");
 
         VBox menuBox = new VBox();
         menuBox.setAlignment(Pos.CENTER);
         menuBox.setSpacing(10);
 
-        Text menuText = new Text("Menu");
-        menuText.setScaleX(3);
-        menuText.setScaleY(3);
-        menuText.setStroke(TITLE_TEXT_COLOR);
-        //menuBox.getChildren().add(menuText);
-        menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
 
         Button mokkiButton = new Button("Mökit");
         mokkiButton.setOnAction(e -> {
@@ -74,9 +65,7 @@ public class MainMenuScreen extends SuperScreen {
         });
 
         menuBox.getChildren().addAll(mokkiButton, varauksetButton, testButton, exitButton);
-        layout.getChildren().add(menuBox);
-        screen = layout;
-        layout.getChildren().add(menuText);
+        screen.setCenter(menuBox);
 
     }
 

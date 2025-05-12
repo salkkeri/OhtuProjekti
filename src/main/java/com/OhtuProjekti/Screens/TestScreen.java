@@ -84,8 +84,7 @@ public class TestScreen extends SuperScreen {
             }
         });
 
-        //screen.getChildren().add(grid);
-
+        screen.setCenter(grid);
 
 
     }
