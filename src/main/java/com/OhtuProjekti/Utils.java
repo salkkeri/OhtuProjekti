@@ -10,7 +10,9 @@ public class Utils {
     /**
      * Color of the background
      */
-    public static final String BACKGROUNDCOLOR = "-fx-background-color: #030303";
+    public static final String BACKGROUNDCOLOR =
+            "-fx-background-color: #ffffff";
+            //"-fx-background-color: #030303";
 
     /**
      * Window width
