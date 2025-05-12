@@ -24,9 +24,7 @@ import static com.OhtuProjekti.Utils.*;
  */
 public class MokkiScreen extends SuperScreen {
 
-    /**
-     * Constructor, sets MokkiScreen.sceneManager
-     *
+    /** Constructor, sets MokkiScreen.sceneManager
      * @param sceneManager The common project SceneManager
      */
     public MokkiScreen(SceneManager sceneManager) {
@@ -34,13 +32,11 @@ public class MokkiScreen extends SuperScreen {
     }
 
 
-    /**
-     * Returns the Pane where the game is drawn
-     *
+    /** Returns the Pane where the game is drawn
      * @return returns GameScreen.screen
      */
     @Override
-    public Pane getScreen() {
+    public Pane getScreen(){
         return screen;
     }
 
@@ -48,9 +44,9 @@ public class MokkiScreen extends SuperScreen {
     /**
      * Creates the StackPane for drawing the screen
      */
-
-    public void createScreen() {
+    public void createScreen(){
         super.createScreenSuper("Mökit");
+
 
         VBox contentBox = new VBox(10);
         contentBox.setPadding(new Insets(20));
@@ -91,6 +87,16 @@ public class MokkiScreen extends SuperScreen {
         }
 
         contentBox.getChildren().addAll(buttonBox, detailsText);
-        screen.getChildren().add(contentBox);
+        screen.setCenter(contentBox);
+
+
+
+
+
     }
+
+
+
+
+
 }
