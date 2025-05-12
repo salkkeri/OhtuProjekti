@@ -53,6 +53,7 @@ abstract public class SuperScreen {
 
         //menuText.setTranslateY(-SCREEN_HEIGHT/2+50);
         StackPane labelTextPane = new StackPane();
+        labelTextPane.setMinHeight(100);
         labelTextPane.setAlignment(Pos.CENTER);
         labelTextPane.getChildren().add(labelText);
 
